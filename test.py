@@ -1,24 +1,21 @@
-import sys
 from FileLoader import FileLoader
 from predict import Predict
 from train import Train
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        exit("Invalid number of arguments")  
-    
     loader = FileLoader()
-    data = loader.load(sys.argv[1])
+    data = loader.load("data.csv")
 
-    # train the model to get thetas to estimate price
     train = Train(data)
-    # learning rate is important as it ensures that Gradient descent converges in a reasonable time
-    theta = train.gradient_descent(0.1, 1000)
+    theta = train.fit(0.1, 1000)
 
     predict = Predict(data, theta)
         
     while True:
         mileage = int(input("Please enter the mileage of your car\n\t>> "))
+        if mileage < 0:
+            print("\t !!! invalid mileage, positive number please !!!")
+            continue
         price = predict.predict_price(mileage)
         print(f"The estimated price of the car is {price} $")
         while True:

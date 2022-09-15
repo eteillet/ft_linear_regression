@@ -25,7 +25,6 @@ class FileLoader:
         if not isinstance(df, pd.DataFrame) or not isinstance(n, int):
             print("Invalid argument type in following function: display(dataframe, integer)")
             return
-
         if n >= 0:
             print(df[:n])
         elif n < 0:

@@ -1,10 +1,20 @@
 # ft_linear_regression
+---
+##### Introduction to machine learning
+The aim is to create a program that predicts the price of a car by using a linear regression with a gradient descent algorithm.
 
-### Implementation of a linear regression with a single feature : the mileage of a car
+### Steps
+    - predict the price of a car for a given mileage
+    - train the model : perform a linear regression on the data
+    - plot the data (initial dataset, regression line, predicted price and loss)
 
-### Creation of 2 programs :
-    * program used to predict the price of a car for a given mileage
-    * program used to train the model : it will read the dataset file and perform a linear regression on the data
+### Usage
+    python test.py
 
+### Technology stack
+    Python3:
+        - Pandas
+        - Numpy
+        - Matplotlib
 
 ![](https://github.com/eteillet/ft_linear_regression/blob/main/animation.gif)
